@@ -1,17 +1,28 @@
-from typing import List, Dict
+from customBubbleSort import customBubbleSort
 
 
-sampleList = [{"minTemp": 4, "maxTemp": 10},{"minTemp": -4, "maxTemp": 18}, {"minTemp": 4, "maxTemp": 10}, {"minTemp": 2, "maxTemp": 12}]
+sampleData = [{"minTemp": 4, "maxTemp": 10}, {"minTemp": -4, "maxTemp": 18}, {"minTemp": 4, "maxTemp": 10}, {"minTemp": 2, "maxTemp": 12}]
 
-def bubbleSort(ar: List[Dict], key: str) -> None:
-    for i in range(len(ar)):
-        for j in range(len(ar) - i - 1):
-            if ar[j][key] > ar[j + 1][key]:
-                temp = ar[j + 1]
-                ar[j + 1] = ar[j]
-                ar[j] = temp
-    return None
+while True:
+    sortKey = input("\nSelect key to sort list of dictionaries by:\n1) Minimum temperature\n2) Maximum temperature\n")
+    if sortKey == "1":
+        sortKey = "minTemp"
+        break
+    elif sortKey == "2":
+        sortKey = "maxTemp"
+        break
+    else:
+        print("Invalid option. Choose 1 or 2.")
 
-bubbleSort(sampleList, "minTemp")
+while True:
+    direction = input("In what order?\n1) Ascending\n2) Descending")
+    if direction == "1":
+        customBubbleSort(sampleData, sortKey, True)
+        break
+    elif direction == "2":
+        customBubbleSort(sampleData, sortKey, False)
+        break
+    else:
+        print("Invalid option. Choose 1 or 2.")
 
-print(sampleList)
+print(sampleData)
