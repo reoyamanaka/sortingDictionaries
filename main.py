@@ -17,12 +17,13 @@ while True:
 while True:
     direction = input("In what order?\n1) Ascending\n2) Descending")
     if direction == "1":
-        customBubbleSort(sampleData, sortKey, True)
+        direction = True
         break
     elif direction == "2":
-        customBubbleSort(sampleData, sortKey, False)
+        direction = False
         break
     else:
         print("Invalid option. Choose 1 or 2.")
 
+customBubbleSort(sampleData, sortKey, direction)
 print(sampleData)
