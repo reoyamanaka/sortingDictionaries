@@ -15,7 +15,7 @@ while True:
         print("Invalid option. Choose 1 or 2.")
 
 while True:
-    direction = input("In what order?\n1) Ascending\n2) Descending")
+    direction = input("In what order?\n1) Ascending\n2) Descending\n")
     if direction == "1":
         direction = True
         break
